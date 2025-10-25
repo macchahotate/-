@@ -1,0 +1,193 @@
+/* ===================================
+// アプリケーションデザイン (style.css) - 最終版
+// =================================== */
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 上部に寄せる */
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* スマホで見やすいサイズに制限 */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #007aff; 
+    margin-bottom: 25px;
+}
+
+/* セクションの非表示 */
+.hidden {
+    display: none !important;
+}
+
+/* --- 1. 入力エリア --- */
+#name-inputs {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* --- 2. ボタンの共通スタイル --- */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#add-name-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#start-btn {
+    background-color: #007aff;
+    color: white;
+    font-weight: bold;
+}
+
+button:disabled {
+    background-color: #b0c4de;
+    cursor: not-allowed;
+}
+
+/* --- 3. ゲーム進行エリア --- */
+#current-player {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e6f2ff;
+    border-radius: 6px;
+}
+
+#generate-btn {
+    background-color: #4cd964; 
+    color: white;
+    font-weight: bold;
+}
+
+#result-display {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#random-number-box {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border: 4px solid #007aff;
+    border-radius: 50%;
+    margin: 20px auto;
+    font-size: 48px;
+    font-weight: bold;
+    color: #007aff;
+    background-color: #fff;
+}
+
+#next-btn {
+    background-color: #ff9500; 
+    color: white;
+}
+
+#check-btn {
+    background-color: #5856d6; 
+    color: white;
+    font-weight: bold;
+}
+
+/* --- 4. 最終結果エリア --- */
+#final-results {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#final-results li {
+    padding: 15px; /* パディングを増やしてタップしやすく */
+    margin-bottom: 10px;
+    border-radius: 8px; /* 角を丸く */
+    display: flex;
+    justify-content: center; /* 中央に寄せる */
+    align-items: center; 
+    font-size: 1.3em; /* 文字を大きく */
+    cursor: pointer; 
+    transition: all 0.3s;
+    text-align: center;
+}
+
+/* --- 4.1. 未公開時のスタイル (タップ待ち) --- */
+#final-results li.unrevealed {
+    background-color: #ffe0b2; 
+    border: 2px solid #ff9800; /* 枠線で強調 */
+}
+#final-results li.unrevealed:hover {
+    opacity: 0.8; /* ホバーで少し暗く */
+}
+
+/* --- 4.2. 公開済みのスタイル --- */
+#final-results li.revealed {
+    background-color: #e8f5e9; /* 薄い緑色 */
+    border: 2px solid #4cd964; 
+}
+
+/* 伏せられた状態のスタイル */
+.hidden-text {
+    color: #ff9800; /* 伏せ字の色 */
+    background-color: #ff9800; /* 伏せ字を隠すための背景色 */
+    padding: 5px 10px; /* パディングを大きく */
+    border-radius: 5px;
+    transition: all 0.5s;
+    font-weight: bold;
+}
+
+/* 公開済みの数字は背景を透明にして表示 */
+#final-results li.revealed .final-result {
+    background-color: transparent;
+    color: #333; /* 公開後の文字色 */
+}
+
+/* --- 5. その他 --- */
+#reset-btn {
+    background-color: #dc3545; 
+    color: white;
+    margin-top: 30px;
+}
+
+.error-message {
+    color: #dc3545;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    height: 1em;
+}
