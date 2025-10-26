@@ -293,4 +293,5 @@ resetBtn.addEventListener('click', () => {
 });
 
 // 初期ロード時の状態設定
+
 switchSection(inputSection);
